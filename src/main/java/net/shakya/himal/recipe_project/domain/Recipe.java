@@ -1,5 +1,6 @@
 package net.shakya.himal.recipe_project.domain;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -10,8 +11,8 @@ import java.util.Set;
 
 @Entity
 @Data
-@EqualsAndHashCode(exclude = {"categories", "ingredients", "notes", "image", "notes"})
-@ToString(exclude = {"categories", "ingredients", "notes", "image", "notes"})
+@EqualsAndHashCode(exclude = {"categories", "ingredients", "notes", "image"})
+@ToString(exclude = {"categories", "ingredients", "notes", "image"})
 public class Recipe {
 
     @Id

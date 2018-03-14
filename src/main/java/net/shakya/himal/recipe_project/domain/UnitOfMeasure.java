@@ -1,5 +1,6 @@
 package net.shakya.himal.recipe_project.domain;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -13,6 +14,6 @@ public class UnitOfMeasure {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private String description;
+    private long id = -1L;
+    private String description = "";
 }
