@@ -1,5 +1,7 @@
 package net.shakya.himal.recipe_project.services;
 
+import net.shakya.himal.recipe_project.converters.RecipeCommandToRecipe;
+import net.shakya.himal.recipe_project.converters.RecipeToRecipeCommand;
 import net.shakya.himal.recipe_project.domain.Recipe;
 import net.shakya.himal.recipe_project.repositories.RecipeRepository;
 import org.junit.Before;
@@ -21,10 +23,16 @@ public class RecipeServiceImplTest {
     @Mock
     RecipeRepository recipeRepository;
 
+    @Mock
+    RecipeCommandToRecipe recipeCommandToRecipe;
+
+    @Mock
+    RecipeToRecipeCommand recipeToRecipeCommand;
+
     @Before
     public void setUp(){
         MockitoAnnotations.initMocks(this);
-        //recipeService =  new RecipeServiceImpl(recipeRepository);
+        recipeService =  new RecipeServiceImpl(recipeRepository, recipeCommandToRecipe, recipeToRecipeCommand);
     }
 
     @Test
